@@ -8,9 +8,13 @@ build:
 python:
   install:
     - requirements: docs/requirements.txt
+    # Install our python package before building the docs
     - method: pip
-    path: .
+      path: .
 
 sphinx:
   fail_on_warning: true
-  configuration: docs/source/conf.py
+
+formats:
+  - pdf
+  - epub
